@@ -1,9 +1,9 @@
 # CHiME-8 Task 3 multi-channel data simulator
 The Multichannel Audio Conversation Simulator (MCAS) Dataset and its companion tools, the MCAC Simulator, are designed to work together to simulate two-sided conversation data for Aria glasses. These tools enable researchers to generate large-scale data required for training models such as automatic speech recognition, speaker diarization, beamforming, and more, which are compatible with Aria Glasses
 
-The version of the MACS simulator open sourced here is very similar to the one used to train the model in published in our Interspeech 2023 work [Directional Speech Recognition for Speaker Disambiguation and Cross-talk Suppression] (https://www.isca-archive.org/interspeech_2023/lin23j_interspeech.html) and ICASSP 2024 work [AGADIR: Towards Array-Geometry Agnostic Directional Speech Recognition] (https://arxiv.org/abs/2401.10411). These paper describes the simulation scenarios for conversational system in details. 
+The version of the MACS simulator open sourced here is very similar to the one used to train the model in published in our Interspeech 2023 work [Directional Speech Recognition for Speaker Disambiguation and Cross-talk Suppression](https://www.isca-archive.org/interspeech_2023/lin23j_interspeech.html) and ICASSP 2024 work [AGADIR: Towards Array-Geometry Agnostic Directional Speech Recognition](https://arxiv.org/abs/2401.10411). These paper describes the simulation scenarios for conversational system in details. 
 
-To simulate multichannel training data for [Aria device] (https://www.projectaria.com/glasses/), please download necessary configuration shared as part of the [MACS Dataset] (https://ai.meta.com/datasets/mcas-dataset).
+To simulate multichannel training data for [Aria device](https://www.projectaria.com/glasses/), please download necessary configuration shared as part of the [MACS Dataset](https://ai.meta.com/datasets/mcas-dataset).
 
 ## Get started 
 In this part, we use Librispeech as an illustration for the multi-channel data simulation for Aria glasses.
