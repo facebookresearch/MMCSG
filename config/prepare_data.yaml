@@ -1,0 +1,11 @@
+train_audio_dir: ${..paths.chime_data_path}/audio/train
+train_transcript_dir: ${..paths.chime_data_path}/transcriptions/train
+
+train_manifest_file: data/train_chunks.json
+valid_manifest_file: data/valid_chunks.json
+
+train_chunk_audio_dir: data/train_chunks
+valid_chunk_audio_dir: data/valid_chunks
+
+chunk_length: 20.0
+train_ratio: 0.9

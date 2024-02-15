@@ -1,0 +1,11 @@
+omegaconf
+hydra-core
+pytorch
+pytorch-cuda=12.1
+torchaudio
+pysoundfile
+sentencepiece
+pybind11
+folly
+eigen
+moviepy

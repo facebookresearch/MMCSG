@@ -1,0 +1,115 @@
+[
+    [
+    "SampleNoiseRemoteTransform",
+    {
+      "fs": 16000,
+      "noise_datasets": [
+        [
+          "/data/users/julincs/noise_list.tsv",
+          0,
+          0,
+          0.9
+        ]
+      ],
+      "noise_sources_model": [
+        1
+      ]
+    }
+  ],
+  [
+    "OverlapMultiTalkerTransform",
+    {
+      "add_mixture_prob": 0.8,
+      "prob_segment_audio": 0.5,
+      "prob_add_distractor": 0.3,
+      "none_overlap_frac": 0.95,
+      "shifting_fraction_min": 0.7,
+      "shifting_fraction_max": 0.95,
+      "split_utt_threshold_min": 0.1,
+      "split_utt_threshold_max": 0.3,
+      "seed": 0
+    }
+  ],
+  [
+    "SampleApplyRIRTransform",
+    {
+      "fs": 16000,
+      "num_noise_sources": 1,
+      "rir_datasets": [
+        [
+          "/data/users/julincs/rir_list.tsv",
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  [
+    "SNRAdjustmentMCTransform",
+    {
+      "snr": [
+        {
+          "snr": [
+            -5,
+            -4,
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20,
+            25,
+            30
+          ],
+          "weight": [
+            4,
+            4,
+            5,
+            5,
+            15,
+            18,
+            20,
+            28,
+            28,
+            30,
+            30,
+            32,
+            32,
+            25,
+            25,
+            25,
+            25,
+            15,
+            10,
+            10,
+            10,
+            5,
+            5
+          ]
+        }
+      ],
+      "fs": 16000,
+      "add_noise": true,
+      "add_distractor_as_bcg_noise": true,
+      "use_alignment": true,
+      "distractor_snr": [
+        0,
+        30
+      ]
+    }
+  ]
+]

@@ -1,0 +1,6 @@
+permitted_subs_path: data/permitted_substitutions.yaml
+hypotheses_dir: ${..inference.output_dir}
+normalize_hypotheses: true
+references_dir: ${..paths.chime_data_path}/transcriptions/dev
+result_dir: ${..base_dir}/results
+write_alignments: false

@@ -1,0 +1,2 @@
+chime_data_path: ???
+pretrained_model_path: data/stt_en_fastconformer_hybrid_large_streaming_multi.nemo

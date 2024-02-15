@@ -1,0 +1,741 @@
+# This file was originally ported over from en.glm into yaml to keep the syntax similar
+# and retain the ability to comment.
+
+#  ORIGINAL GLM HEADER START
+#  File: en20050613.glm
+#  Desc:  This file contains the mapping rules to be applied to both
+#  reference and system output transcripts to be used in RT-04f STT
+#  This file contains additional GLM entries added during the RT-03S
+#  evaluation and was derived from en20030506.glm
+#
+# name "en20050613.glm"
+# desc "The Global Mapping File (GLM)for RT-04 STT English development scoring"
+# format = 'NIST1'
+# max_nrules = '2500'
+# copy_no_hit = 'T'
+# case_sensitive = 'F'
+#  ORIGINAL GLM HEADER END
+
+# unambiguously handle mr. mrs. and ms.
+Mr. : Mr
+mister : Mr
+Mister : Mr
+Mrs. : Mrs
+Ms. : Ms
+
+# Special contractions
+\'cause : because # per ahd
+c\'mon : come on
+\'em : them # per ahd
+gonna : going to # isip doc
+gotta : got to # isip doc
+kinda : kind of # isip doc
+ma\'am : mam
+oughta : ought to # isip doc.
+\'til : till # not exactly per ahd, but common
+wanna : want to # isip doc
+cuz : because
+gimme : give me
+dunno : don\'t know
+mighta : might have
+shoulda : should have
+
+# Alternate acceptable spellings
+adviser : advisor   # actually, "adviser\' is preferred, but doing it this way avoids misspelling "advisory":
+# which is proper:
+Bagdad : Baghdad # per ahd
+bazar : bazaar # per ahd
+benefitted : benefited # per ahd
+benefitting : benefiting # per ahd
+cancellation : cancelation # per ahd
+channelled : channeled # per ahd
+combatted : combated # per ahd
+combatting : combating # per ahd
+colosseum : coliseum # per ahd
+counsellor : counselor # per ahd
+counselled : counseled # per ahd
+counselling : counseling # per ahd
+csar : czar # www hits
+disfunction : dysfunction # per ahd
+Dunkerque : Dunkirk # per ahd
+Down syndrome : Down\'s syndrome # per ahd
+donut : doughnut # per ahd
+esthetic : aesthetic  # per ahd
+enquiry : inquery
+Fatimah : Fatima # per ahd
+fo\'c\'sle : forecastle # per ahd
+focussed : focused # per ahd
+focusses : focuses # per ahd
+focussing : focusing # per ahd
+FTSE : Footsie
+FT SE : Footsie # officially spelled w/hyphen
+funelled : funeled  # per ahd
+funelling : funeling  # per ahd
+Gaddafi : Qaddhafi # per ahd
+gelatine : gelatin # per ahd
+Gennadi : Gennady # russian transliteration not 100% fixed
+Hizbollah : Hezbollah # www hits
+Johnny-come-latelys : Johnny-come-latelies # per ahd
+Kaddafi : Qaddafi # per ahd
+looney : loony # per ahd
+Ma\'ariv : Maariv # www hits
+Mikasuki : Miccosukee # per ahd
+mislabelled : mislabeled # per ahd
+mislabelling : mislabeling # per ahd
+Khadafy : Qaddafi # per ahd
+kippah : kipah # www hits
+okay : ok
+online : on line
+piroghi : pirogi # per ahd
+pollenat : pollinat # either form is accepted
+programed : programmed # per ahd
+programer : programmer # per ahd
+programing : programming # per ahd
+Qadhafi : Qaddafi # www hits
+rivaling : rivalling # per ahd
+Shabuoth : Shavuot # per ahd
+Shiah : Shia # per ahds
+United States\' : United States
+Taipeh : Taipei # per ahd
+throughway : thruway # in particular, the ny state ___
+tornadoes : tornados # per ahd
+tsar : czar # www hits
+tzar : czar # www hits
+whimsey : whimsy # per ahd
+Yasser : Yasir # per ahd, but alt common on web
+Yassir : Yasir # per ahd, but alt common on web
+yup : yep
+Zairean : Zairian # per ahd
+Zuganov : Zyuganov # russian transliteration not 100% fixed
+
+# CF British English to American English mappings
+acknowledgement : acknowledgment
+aesthetic : esthetic
+aesthetics : esthetics
+analogue : analog
+analysed : analyzed
+analyses : analyzes
+analysing : analyzing
+archeological : archaeological
+archeology : archaeology
+authorised : authorized
+behaviour : behavior
+behavioural : behavioral
+behaviours : behaviors
+bevelled : beveled
+cancelled : canceled
+cancelling : canceling
+capitalisation : capitalization
+capitalise : capitalize
+capitalising : capitalizing
+catalogue : catalog
+catalogued : cataloged
+catalogues : catalogs
+cataloguing : cataloging
+categorising : categorizing
+centimetre : centimeter
+centimetres : centimeters
+centralised : centralized
+centre : center
+centred : centered
+centres : centers
+channeller : channeler
+channelling : channeling
+colorised : colorized
+colour : color
+colour-based : color-based
+colour-wise : color-wise
+coloured : colored
+colours : colors
+commercialisation : commercialization
+conceptualisations : conceptualizations
+criticised : criticized
+customise : customize
+customising : customizing
+defence : defense
+dependant : dependent
+diallers : dialers
+dialling : dialing
+dialogue : dialog
+dialogue-wise : dialog-wise
+dialogues : dialogs
+digitisers : digitizers
+encyclopaedia : encyclopedia
+endeavour : endeavor
+endeavour\'s : endeavor\'s
+endeavours : endeavors
+expertise : expertize
+eyeing : eying
+factorisation : factorization
+favour : favor
+favourable : favorable
+favourite : favorite
+fibre : fiber
+fibreglass : fiberglass
+finalise : finalize
+finalised : finalized
+finalising : finalizing
+fulfil : fulfill
+generalisation : generalization
+generalise : generalize
+generalised : generalized
+generalising : generalizing
+gramme : gram
+grey : gray
+greyhound : grayhound
+greys : grays
+harbour : harbor
+honour : honor
+honours : honors
+initialisation : initialization
+initialised : initialized
+jewellery : jewelry
+judgement : judgment
+judgements : judgments
+kidnapped : kidnaped
+kidnapper : kidnaper
+kidnappers : kidnapers
+kidnapping : kidnaping
+kidnappings : kidnapings
+labelled : labeled
+labellers : labelers
+labelling : labeling
+labour : labor
+licence : license
+licences : licenses
+localisation : localization
+localised : localized
+louvre : louver
+manoeuvre : maneuver
+marshalled : marshaled
+maximise : maximize
+metres : meters
+millimetre : millimeter
+minimised : minimized
+minimising : minimizing
+mitre : miter
+mobilisation : mobilization
+modelled : modeled
+modelling : modeling
+modularisation : modularization
+moulded : molded
+moulding : molding
+multi-coloured : multi-colored
+neighbour : neighbor
+neighbouring : neighboring
+neighbours : neighbors
+noise-cancelling : noise-canceling
+non-acknowledgement : non-acknowledgment
+normalisation : normalization
+normalised : normalized
+normalising : normalizing
+optimisation : optimization
+optimise : optimize
+organisation : organization
+organisational : organizational
+organisations : organizations
+organise : organize
+organised : organized
+organises : organizes
+organising : organizing
+parameterised : parameterized
+personalisation : personalization
+personalised : personalized
+plough : plow
+preemphasised : preemphasized
+pressurised : pressurized
+prioritising : prioritizing
+programme : program
+programmes : programs
+prologue : prolog
+prophecies : prophesies
+prophecy : prophesy
+quantiser : quantizer
+quantisers : quantizers
+re-initialising : re-initializing
+realisation : realization
+realise : realize
+realised : realized
+realising : realizing
+recognise : recognize
+recognised : recognized
+recogniser : recognizer
+recognisers : recognizers
+recognises : recognizes
+revolutionise : revolutionize
+revolutionising : revolutionizing
+saleability : salability
+saleable : salable
+signalled : signaled
+signalling : signaling
+specialised : specialized
+spiralling : spiraling
+stabilise : stabilize
+standardisation : standardization
+sulphur : sulfur
+summarisation : summarization
+summarised : summarized
+summarises : summarizes
+summarising : summarizing
+synchronisations : synchronizations
+synchronise : synchronize
+synchronised : synchronized
+synchronising : synchronizing
+synthesising : synthesizing
+theatre : theater
+theatres : theaters
+through : thru
+totalled : totaled
+totalling : totaling
+travelled : traveled
+traveller : traveler
+travellers : travelers
+travelling : traveling
+tunnelling : tunneling
+un-normalised : un-normalized
+unlabelled : unlabeled
+unquantised : unquantized
+utilisation : utilization
+utilise : utilize
+utilised : utilized
+utilising : utilizing
+worshipped : worshiped
+worshippers : worshipers
+worshipping : worshiping
+# -------------------------------------- END CF
+
+# one to two
+farsighted : far sighted
+far-sighted : far sighted
+scepticism : skepticism
+euroscepticism : euro skepticism
+nonetheless : none the less
+breakdown : break down
+mainstreaming : main streaming
+decisionmaking : decision making
+standstill : stand still
+straightjacket : straight jacket
+intergenerational : inter generational
+taskforce : task force
+landowners : land owners
+counterproductive : counter productive
+driftnet : drift net
+driftnets : drift nets
+midterm : mid term
+proactively : pro actively
+breakup : break up
+antiterrorism : anti terrorism
+antiterrorist : anti terrorist
+Eurozone : Euro zone  # they are equally likely
+shortsighted : short sighted  # they are equally likely
+
+# rules to handle inconsistencies in transcripts
+rapporter : rapporteur
+Mariane : Marianne
+bio-terrorism : bioterrorism # map to most common form
+
+#
+# end of tc-star section 1 (see section 2 at the end)
+#
+
+# one-to-three-word compound word expansions
+antiaircraft : anti air craft
+
+
+# One-to-two-word compound word expansions
+afterall : after all
+airbag : air bag
+airbags : air bags
+aircraft : air craft
+aircrew : air crew
+airforce : air force
+airline\'s : air line\'s
+airstrikes :  air strikes       # not in ahd, equal use on www
+airtight : air tight
+airwing : air wing
+alfavilli : alfa villi
+alongside : along side
+antiabortion : anti abortion
+anymore : any more
+anytime : any time
+artwork : art work
+automaker : auto maker
+automakers : auto makers
+automotive : auto motive
+autoworkers : auto workers
+awhile : a while
+backdoor : back door
+backpage :  back page # not in ahd, both on www
+backseat : back seat
+backside : back side
+backup : back up
+backyard :  back yard
+backyards :  back yards
+ballgame : ball game # per ahd
+ballpark : ball park
+bandwagon : band wagon
+baseline : base line # www hits
+beancounter : bean counter
+beltway : belt way
+benchmark : bench mark
+bestseller :  best seller
+bestsellers :  best sellers
+biodiversity :  bio diversity     # not in ahd, hyphenated on www
+biohazard : bio hazard
+bittersweet : bitter sweet
+blueprint : blue print
+boardwalk : board walk
+bookstores : book stores
+breakaway : break away
+buildup : build up # www hits
+businessman : business man
+businessmen : business men
+businesspeople : business people
+butthead : butt head
+camelback : camel back # literally; ahd is silent
+cannot : can not
+ceasefire : cease fire # per ahd
+cellphone :  cell phone
+cellphones :  cell phones
+centerpiece : center piece
+childcare : child care
+chuckwagon :  chuck wagon
+cleanup : clean up
+cofounder : co founder # not found in ahd
+coldblooded :  cold blooded
+copycat : copy cat
+costar :  co star
+countdown : count down
+countryside : country side
+courthouse : court house
+coverup : cover up # per ahd, with hyphen
+coworker :  co worker
+crackdown : crack down
+crossfire : cross fire
+data base :  data base
+dataquest :  data quest
+daycare : day care # per ahd
+daytime : day time
+Depalma : De palma # brian _
+Depalma\'s : De palma\'s
+Deutschemark : Deutsche mark # per ahd
+dragonheart : dragon heart
+drumbeat : drum beat
+dumptruck : dump truck
+endgame : end game # per ahd
+etcetera : et cetera
+everyday : every day
+extramarital : extra marital
+eyewitness : eye witness
+eyewitnesses : eye witnesses
+facelift :  face lift
+fallout : fall out # www hits
+farmhouse : farm house
+ferryboat : ferry boat
+fingerprint : finger print
+fingerprints : finger prints
+firearms : fire arms
+firefighter : fire fighter # per ahd
+firefighters : fire fighters # per ahd
+flatbed : flat bed
+followup : follow up # per ahd, with a hyphen
+forefront : fore front
+freelance : free lance # per ahd
+freestyle : free style
+frontline : front line # per ahd (adj is also front-line)
+frontrunner :  front runner
+fundrais : fund rais # per ahd (applies to fundraiser, fundraising, etc.)
+giveaway : give away
+goodbye : good bye # per ahd (actually "good-bye")
+goodnight : good night
+grassroots : grass roots
+gridlock : grid lock
+gunbattle : gun battle
+gunshot : gun shot
+hallway : hall way
+hardline : hard line # per ahd (adj or stem-r only)
+healthcare : health care # per ahd
+healthdesk : health desk # npr spells theirs as 1 word
+heartfelt : heart felt
+homeland : home land
+homemade : home made
+homepage : home page
+hometown : home town
+hotdog : hot dog # per ahd
+hotline : hot line # per ahd
+hotspots :  hot spots
+hourlong :  hour long         # not in ahd, hyphenated on web
+however : how ever
+immunodepression :  immuno depression
+interconnect : inter connect    # 1 word per ahd, but lots of hyphenated form on web
+interracial : inter racial
+jetliner : jet liner # per ahd
+keyword : key word # per ahd
+knockoff : knock off # www hits
+Laguardia : La guardia # www hits, altho ahd has only 2-word form
+landfall : land fall
+lawmakers : law makers
+lawsuit : law suit
+lawsuits : law suits
+layoff : lay off
+layoffs : lay offs
+letdown : let down
+lifespan : life span
+lifetime : life time
+liftgate : lift gate # eq. hits on www
+lopsided : lop sided
+mainstream : main stream
+makeup : make up # actually hyphenated, per ahd
+manpower : man power
+marketplace : market place # per ahd
+marketplace\'s : market place\'s
+microbiology : micro biology
+midair : mid air
+mideast : mid east
+midtown : mid town
+mindset : mind set # actually hyphenated per ahd
+monthlong : month long # www hits, hyphenated
+motorboat : motor boat
+multibillion :  multi billion
+multicultur :  multi cultur  # not in ahd
+multinational : multi national
+nationwide : nation wide
+Netan yahu\'s : Netanyahu\'s
+nevermind : never mind
+newshour : news hour # www hits, but ?? (lehrer\'s is only 1 word)
+newspaper : news paper
+newsroom : news room # www hits
+newsweek : news week
+newswire :  news wire
+nightline : night line
+noneconomic : non economic # www hits
+nonexistent : non existent
+nonfederal :  non federal
+noninvasive :  non invasive
+nonprofit : non profit
+nonproliferation :  non proliferation # not in ahd, both on www
+nonstop : non stop
+nontariff :  non tariff
+nonunion : non union
+northeast : north east
+northwest : north west
+nowhere : no where
+o\'clock : o. clock
+oilmen :  oil men
+onboard : on board # per ahd, with hyphen
+onetime : one time
+oshkosh : osh kosh # many net hits both ways
+outdated : out dated
+outplacement : out placement
+outright : out right
+overall : over all
+overbuilt : over built
+overcrowding : over crowding
+overhaul : over haul
+overheat : over heat
+overnight : over night
+overpoll : over poll # neologism
+overseas : over seas
+overshadowed : over shadowed
+paperwork : paper work # per ahd
+parttime :  part time
+payback : pay back
+peacekeepers : peace keepers
+peacekeeping : peace keeping
+photocall : photo call
+pickup : pick up
+playoff : play off # actually hyphenated per ahd
+playoffs : play offs
+policewoman : police woman
+policymaker :  policy maker
+postcard : post card # per ahd
+postcards : post cards
+powerlines :  power lines
+predawn : pre dawn
+preexist : pre exist
+prepaid : pre paid
+preteen : pre teen
+primetime : prime time # per ahd, noun-2 words, adj-hyphenated
+proactive :  pro active
+pullback : pull back
+rainshower :  rain shower
+reassess : re assess
+rebury : re bury # www hits
+reelect : re elect # per ahd, with hyphen
+reenact :  re enact # per ahd both
+reenergize :  re energize       # not in ahd, both uses on www
+reenforc : re enforc # per ahd, with hyphen
+reenter : re enter # per ahd, with hyphen
+reestablished :  re established
+#;reexamin : re examin # per ahd, with hyphen
+#;rehospital : re hospital # www hits
+#;reimagine : re imagine # www hits
+#;remix : re mix
+reroute :  re route
+roadmap : road map # per ahd
+Robinhood : Robin hood
+rollback : roll back
+roundtable : round table # per ahd, w/ or w/o hyphen
+runoff : run off
+sabretech : sabre tech # both ways on www
+saltwater :  salt water
+Sandiego : San diego # per ahd, two words
+scarecrow : scare crow
+schoolbus : school bus       # 2 words per ahd
+schoolbuses : school buses     # 2 words per ahd
+schoolhouse : school house
+scorecard : score card
+scorekeeping : score keeping
+seatbelt : seat belt
+selloff :  sell off
+servicemen : service men
+setback : set back
+shakeup : shake up
+shootout : shoot out # per ahd, with hyphen
+shortcake : short cake
+showbiz : show biz
+shutout : shut out
+shutdown : shut down       # aloha
+sideline : side line
+sidelines : side lines
+sidestepping : side stepping
+sizeable : sizable # per ahd
+skyrocket : sky rocket
+smokeless : smoke less
+snowshowers : snow showers # ahd is silent on this one
+someday : some day
+somehow : some how
+someplace : some place
+sometime : some time
+southeastern : south eastern
+southwest : south west
+speedway : speed way
+spinoff : spin off # per ahd, with hyphen
+spotlight : spot light
+standoff : stand off
+statehouse :  state house
+statewide : state wide
+stepdad : step dad
+stockbroker : stock broker
+stockholders : stock holders
+strikeout : strike out
+subcommittee : sub committee
+substandard : sub standard
+subzero : sub zero
+suchi : su chi
+suitcases : suit cases
+summertime : summer time
+SuperBowl : Super Bowl # 1 word 38k, 2 words 70k www hits
+superfighter : super fighter # ahd silent; about eq www hits
+supersonics : super sonics
+surfboard : surf board
+sweatshop : sweat shop
+tailhook : tail hook
+takeover : take over # per ahd, with hyphen
+takeovers : take overs
+taxpayer : tax payer
+taxpayers : tax payers
+taxpayers\' : tax payers\'        # tc-star
+taxpayer\'s : tax payer\'s        # tc-star
+teenage : teen age # per ahd, with hyphen
+thundershower : thunder shower
+thunderstorm : thunder storm
+thunderstorms : thunder storms
+timezone : time zone # aloha
+tipline : tip line
+travelgate : travel gate
+tristate : tri state
+turnout : turn out
+underway : under way # per ahd
+upfront : up front
+upside : up side
+upstate : up state
+valuejet : valu jet
+valujet : valu jet
+videotape : video tape
+videotaped : video taped
+Vietnam : Viet nam
+wakeup :  wake up
+walkout : walk out
+Wallstreet : Wall street
+Walmart : Wal mart # www hits, butoffically 2 wrds w/hyphen
+warship : war ship
+wartime : war time
+wastewater : waste water
+watchdog : watch dog
+website : web site
+weightwise :  weight wise
+welltimed :  well timed
+whatever : what ever
+whistleblower : whistle blower # per ahd
+whitewater : white water # see it both ways -- no standard
+whoever : who ever
+widespread : wide spread
+wildcard : wild card
+wildfire : wild fire
+wildfires : wild fires
+wildlife : wild life
+wilful : willfull # per ahd
+without : with out
+woodchips : wood chips
+workforce : work force # per ahd
+workplace : work place # per ahd
+worksheet : work sheet # per ahd
+worldview : world view # per ahd, with hyphen
+worldwide : world wide
+wrongdoing : wrong doing
+Zooaltlanta :  Zoo Atlanta
+goodmorning America : good morning America # see it both ways on web
+trainspotting : train spotting
+
+technoclutter : techno clutter
+
+# Delete hesitation fillers
+# List taken from https://www.internalfb.com/intern/wiki/SRT_Transcription_Guidelines/Other_Conventions/
+ah: ''
+aww: ''
+eh: ''
+ehm: ''
+eww: ''
+ha: ''
+hee: ''
+heh: ''
+hm: ''
+huh: ''
+mmm: ''
+ooh: ''
+pff: ''
+shh: ''
+ugh: ''
+uh: ''
+uh-uh: ''
+uh-huh: ''
+um: ''
+whoa: ''
+whoo: ''
+
+# Trivial Contraction
+who is: who's
+who will: who'll
+what is: what's
+what will: what'll
+why is: why's
+why will: why'll
+where is: where's
+where will: where'll
+when is: when's
+when will: when'll
+which is: which's
+which will: which'll
+how is: how's
+that is: that's
+there is: there's
+i am: i'm
+i will: i'll
+you will: you'll
+he is: he's
+he will: he'll
+she is: she's
+she will: she'll
+it is: it's
+it will: it'll

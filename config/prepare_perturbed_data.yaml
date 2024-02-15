@@ -1,0 +1,18 @@
+subset: dev
+
+perturbation_list: data/perturbation_test_${.subset}
+
+audio_dir: ${..paths.chime_data_path}/audio/${.subset}
+audio_perturbed_dir: data/perturbation_test/audio
+
+perturb_video: true
+video_dir: ${..paths.chime_data_path}/video/${.subset}
+video_perturbed_dir: data/perturbation_test/video
+
+perturb_accelerometer: true
+accelerometer_dir: ${..paths.chime_data_path}/accelerometer/${.subset}
+accelerometer_perturbed_dir: data/perturbation_test/accelerometer
+
+perturb_gyroscope: true
+gyroscope_dir: ${..paths.chime_data_path}/gyroscope/${.subset}
+gyroscope_perturbed_dir: data/perturbation_test/gyroscope

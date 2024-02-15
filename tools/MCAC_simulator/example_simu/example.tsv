@@ -1,0 +1,3 @@
+self	other	distractor
+/data/users/julincs/example_simu/librispeech_wav/train_clean_100/19/198/19-198-0012.wav	/data/users/julincs/example_simu/librispeech_wav/train_clean_100/19/198/19-198-0019.wav	/data/users/julincs/example_simu/librispeech_wav/train_clean_100/19/198/19-198-0024.wav
+/data/users/julincs/example_simu/librispeech_wav/train_clean_100/19/198/19-198-0019.wav	/data/users/julincs/example_simu/librispeech_wav/train_clean_100/19/198/19-198-0012.wav	/data/users/julincs/example_simu/librispeech_wav/train_clean_100/19/198/19-198-0024.wav

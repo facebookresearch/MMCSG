@@ -1,0 +1,5 @@
+checkpoint_dir: ${..finetune_asr.output_dir}/checkpoints
+checkpoint_path: null # will find best checkpoint in checkpoint dir if null
+lookahead_sizes: [13,6,1]
+output_dir: ${..base_dir}/inference
+audio_dir: ${..paths.chime_data_path}/audio/dev
