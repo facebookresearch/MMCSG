@@ -12,7 +12,7 @@ This README is a guide on how to install and run the baseline system for the cha
 5. <a href="#results">Results</a>
 
 ## <a id="install">1. Installation </a>
-The installation of the necessary tools is detailed in `install.sh`. We recommend to follow it step-by-step and adjust for your system if needed (e.g. for installation of PyTorch, you should set your version of CUDA). The installation goes through
+The installation of the necessary tools is detailed in `install.sh`. We recommend to follow it step-by-step and adjust for your system if needed (e.g. for installation of PyTorch, you should set your version of CUDA following the [PyTorch installation instructions](https://pytorch.org/get-started/locally/)). The installation goes through
 - Installation of necessary Python packages using `conda` and `pip`,
 - Installation of the tools for evaluating multi-talker WER.
 
