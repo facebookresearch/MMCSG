@@ -8,4 +8,6 @@ sentencepiece
 pybind11
 folly
 eigen
+icu
+glog
 moviepy
