@@ -10,6 +10,7 @@ This README is a guide on how to install and run the baseline system for the cha
 3. <a href=#description>Detailed description of the system</a>
 4. <a href="#evaluation">Evaluation</a>
 5. <a href="#results">Results</a>
+6. <a href="#troubleshooting">Troubleshooting</a>
 
 ## <a id="install">1. Installation </a>
 The installation of the necessary tools is detailed in `install.sh`. We recommend to follow it step-by-step and adjust for your system if needed (e.g. for installation of PyTorch, you should set your version of CUDA following the [PyTorch installation instructions](https://pytorch.org/get-started/locally/)). The installation goes through
@@ -260,6 +261,30 @@ The results for the baseline model on dev subset are the following:
   </tr>
 </tbody>
 </table>
+
+## <a id="troubleshooting">5. Troubleshooting</a>
+
+### Compilation of multitalker WER: `glog/logging.h` `folly/Format.h` `unicode/normalizer2.h` `Eigen/Core` No such file or directory
+The header files should be available after the installation of the requirements in `$CONDA_PREFIX/include` and `$CONDA_PREFIX/include/eigen3`. If you cannot locate the header files in these directories, try to rerun the conda installation as follows:
+
+    conda install conda-forge::folly
+    conda install conda-forge::glog
+    conda install conda-forge::eigen
+    conda install conda-forge::icu
+
+### CUDA or NVIDIA errors
+Make sure that the version of PyTorch agrees with your CUDA version and Nvidia driver. The `install.sh` script by default assumes CUDA 12.1. If your version differs, please follow the instructions at the [PyTorch website](https://pytorch.org/get-started/locally/).
+
+### TypeError: SkipResumeTrainingValidationLoop._should_check_val_fx() takes 1 positional argument but 2 were given
+Downgrade your PyTorch Lightning toolkit to pytorch-lightning=2.0.7 as this is the latest version supported by NeMO. 
+
+### Training or validation killed
+While there might be various reasons for this, one potential cause is too many workers spawned by dataloader. Try to decrease the number of workers (by default 8) by passing parameters
+`finetune_asr.model.train_ds.num_workers=<your-chosen-number> finetune_asr.model.validation_ds.num_workers=<your-chosen-number>`
+You can also directly modify this in the configuration file `config/finetune_asr.yaml`.
+
+### Other problems
+Please [open an issue](https://github.com/facebookresearch/MMCSG/issues/new) or contact us at [Slack](https://join.slack.com/t/chime-fey5388/shared_invite/zt-1oha0gedv-JEUr1mSztR7~iK9AxM4HOA) (channel #chime-8-mmcsg).
 
 ## License
 MMCSG is CC-BY-NC licensed, as found in the LICENSE file.
