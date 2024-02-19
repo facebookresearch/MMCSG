@@ -153,7 +153,7 @@ This step can be configured by changing `config/evaluate.yaml` or passing comman
 
 ### Running the evaluation script on your own outputs
 
-    python -m scrips.evaluate evaluate.hypotheses_dir=<hypotheses-dir> evaluate.result_dir=<result-dir>
+    python -m scrips.evaluate evaluate.hypotheses_dir=<hypotheses-dir> evaluate.result_dir=<result-dir> evaluate.hypotheses_in_subdirs=false
 
 `<hypotheses-dir>` should contain one file per recording, of the same name as the stem of the audio filename. This file should have lines in the format:
 

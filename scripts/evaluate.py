@@ -349,7 +349,12 @@ def evaluate(cfg):
         read_transcriptions(Path(cfg.references_dir)), permitted_subs
     )
 
-    for hypotheses_subdir in Path(cfg.hypotheses_dir).glob('*'):
+    if cfg.hypotheses_in_subdirs:
+        subdirs = Path(cfg.hypotheses_dir).glob('*')
+    else:
+        subdirs = [Path(cfg.hypotheses_dir)]
+
+    for hypotheses_subdir in subdirs:
         if not hypotheses_subdir.is_dir():
             continue
         logging.info(f'Evaluating hypotheses "{hypotheses_subdir.stem}"') 
