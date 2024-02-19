@@ -47,11 +47,18 @@ Any of the steps can be skipped by setting their attribute `run` to `false`, e.g
 
     python run.py prepare_data.run=false finetune_asr.run=false
 
-will skip preparation of data and finetuning of the ASR system, thus will run only inference and evaluation. The individual steps can be also run separately, e.g.
+will skip preparation of data and finetuning of the ASR system, thus will run only inference and evaluation. The individual steps can be also run separately, i.e. running `python run.py` is equivalent to running these four commands:
+
+    python -m scripts.prepare_data
+    python -m scripts.finetune_asr
+    python -m scripts.inference
+    python -m scripts.evaluate
+
+The individual steps also accept additional parameters, e.g.
 
     python -m scripts.inference inference.output_dir=custom_output_dir
 
-for running inference step only and changing the default output directory.
+runs inference step only and changes the default output directory.
 
 ### Location of outputs
 The default base directory is set in `config/main.yaml` as `exp/base` through the attributes `base_dir` and `exp_name`. Therefore, running e.g.
