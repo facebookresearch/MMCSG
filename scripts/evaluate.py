@@ -52,6 +52,8 @@ def normalize_words(transcription, permitted_subs):
     multiple words are merged into one, timestamp of the last of the original
     words is assigned.
     """
+    if len(transcription) == 0:
+        return transcription
     words, timestamps, idxs = zip(*transcription)
     words = [remove_punctuation(word).lower() for word in words]
 
