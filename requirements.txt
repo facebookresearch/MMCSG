@@ -6,8 +6,9 @@ torchaudio
 pysoundfile
 sentencepiece
 pybind11
-folly
-eigen
+folly==2024.02.12.00
+eigen==3.4.0
 icu
-glog
+glog==0.6.0
 moviepy
+resampy
