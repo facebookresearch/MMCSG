@@ -29,7 +29,7 @@ Finally, the fine-tuning step expects a downloaded [model from HuggingFace](http
 
 To run the baseline system, you need to specify the path to the downloaded CHiME data in `config/paths.yaml`, as:
 
-    chime_data_dir=<PATH_TO_CHIME_DIRECTORY>
+    chime_data_dir: <PATH_TO_CHIME_DIRECTORY>
 
 where `<PATH_TO_CHIME_DIRECTORY>` points to directory containing the `audio/{train,dev}` and `transcriptions/{train,dev}` subdirectories. 
 
