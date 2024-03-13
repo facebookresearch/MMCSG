@@ -1,0 +1,6 @@
+permitted_subs_path: data/permitted_substitutions.yaml
+wav_dir: ${..simulate.simulated_data_dir}/simulated_wav 
+ali_dir: ${..simulate.simulated_data_dir}/simulated_metadata
+train_ratio: 0.9
+output_train_manifest: data/train_simulated.json
+output_valid_manifest: data/valid_simulated.json

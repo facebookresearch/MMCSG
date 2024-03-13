@@ -1,0 +1,5 @@
+tokenizer_dir: ${..base_dir}/tokenizer
+manifest: ${..prepare_simulated_data.output_train_manifest}
+vocab_size: 3500
+tokenizer: spe
+spe_type: unigram

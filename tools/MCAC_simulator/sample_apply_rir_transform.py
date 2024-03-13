@@ -12,7 +12,7 @@ from typing import List
 import numpy as np
 import scipy.signal as sps
 
-from .sample_noise_transform import load_column
+from sample_noise_transform import load_column
 
 logger = logging.getLogger(__name__)
 

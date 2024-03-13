@@ -377,7 +377,7 @@ class SNRAdjustmentMCTransform(object):
         spk1_vad, spk2_vad = None, None
         if self.use_alignment:
             ali_lines = [
-                x for x in meta["alignment"].split("\\n") if not x.endswith(" SIL")
+                x for x in meta["alignment"].split("\n") if not x.endswith(" SIL")
             ]
             assert all(
                 len(x.split()) == 5 for x in ali_lines

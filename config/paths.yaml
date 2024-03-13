@@ -1,2 +1,8 @@
 chime_data_path: ???
+librispeech_data_path: ???
+librispeech_alignments_path: ???
+tedlium_data_path: ???
+dns_noise_data_path: ???
+mcas_real_rir_path: ???
+
 pretrained_model_path: data/stt_en_fastconformer_hybrid_large_streaming_multi.nemo

@@ -1,0 +1,8 @@
+alignment_dirs:
+    - ${...paths.librispeech_alignments_path}/train-clean-100
+    - ${...paths.librispeech_alignments_path}/train-clean-360
+    - ${...paths.librispeech_alignments_path}/train-other-500
+output_alignment_dirs:
+    - data/librispeech/alignments/train-clean-100
+    - data/librispeech/alignments/train-clean-360
+    - data/librispeech/alignments/train-other-500

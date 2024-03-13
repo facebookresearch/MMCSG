@@ -30,7 +30,7 @@ def convert_format(text_line):
             )
         )
         start_time = end_time
-    return "\\n".join([str(x) for x in new_format]).encode("utf-8"), file_name
+    return "\n".join([str(x) for x in new_format]).encode("utf-8"), file_name
 
 
 def main() -> None:
@@ -58,10 +58,7 @@ def main() -> None:
             lines = f.readlines()
             for line in lines:
                 new_format, file_name = convert_format(line)
-                output_prefix = "_".join(
-                    str(Path(*Path(aligment_file).parts[-4:-1])).split("/")
-                )
-                output_file_name = output_prefix + "_" + file_name + ".txt"
+                output_file_name = file_name + ".txt"
                 output_file = os.path.join(
                     args.output_path,
                     output_file_name,

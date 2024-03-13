@@ -18,7 +18,7 @@ import soundfile as sf
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-from .compose import Compose
+from compose import Compose
 
 
 def _get_fixed_speaker_transform(transforms_config, speaker="self"):
@@ -60,11 +60,6 @@ def build_args_parser():
     )
     parser.add_argument("--save-meta", action="store_true")
     parser.add_argument(
-        "--output-audio-handle",
-        action="store_true",
-        help="Whether to upload and output audio handle",
-    )
-    parser.add_argument(
         "--input-data-tsv",
         type=str,
         help="the input table including self, other, distractor wav file path.",
@@ -94,23 +89,27 @@ def build_args_parser():
     return parser
 
 
-def run_simulation() -> None:
-    parser = build_args_parser()
-    args = parser.parse_args()
-    logger.info(args.transforms_config_file)
+def run_simulation(
+    input_data_tsv: str,
+    ctm_path: str,
+    output_root_path: str,
+    transforms_config_file: str,
+    save_meta: bool = False,
+) -> None:
+    logger.info(transforms_config_file)
     # load transforms config
-    with open(args.transforms_config_file, "r") as f:
+    with open(transforms_config_file, "r") as f:
         transforms_config = json.load(f)
     composed_transforms = Compose.setup_from_config(transforms_config)
-    output_dir_wav = os.path.join(args.output_root_path, "simulated_wav")
+    output_dir_wav = os.path.join(output_root_path, "simulated_wav")
     if not os.path.exists(output_dir_wav):
         os.mkdir(output_dir_wav)
-    output_dir_wav_metadata = os.path.join(args.output_root_path, "simulated_metadata")
+    output_dir_wav_metadata = os.path.join(output_root_path, "simulated_metadata")
     if not os.path.exists(output_dir_wav_metadata):
         os.mkdir(output_dir_wav_metadata)
 
     # source path from input tsv file: self, other, distractor
-    with open(args.input_data_tsv, "r") as f:
+    with open(input_data_tsv, "r") as f:
         lines = csv.reader(f, delimiter="\t")
         next(lines, None)  # skip the headers
         # start processing
@@ -127,21 +126,17 @@ def run_simulation() -> None:
 
             # load alignment files
             self_spk_ctm_name = (
-                "_".join(str(Path(*Path(self_speaker_path).parts[-4:-1])).split("/"))
-                + "_"
-                + os.path.basename(self_speaker_path).replace(".wav", ".txt")
+                os.path.basename(self_speaker_path).replace(".wav", ".ctm")
             )
-            self_spk_ctm_path = os.path.join(args.ctm_path, self_spk_ctm_name)
+            self_spk_ctm_path = os.path.join(ctm_path, self_spk_ctm_name)
             with open(self_spk_ctm_path, "rb") as f:
-                self_spk_ctm = f.readline()
+                self_spk_ctm = f.read().strip()
             other_spk_ctm_name = (
-                "_".join(str(Path(*Path(other_speaker_path).parts[-4:-1])).split("/"))
-                + "_"
-                + os.path.basename(other_speaker_path).replace(".wav", ".txt")
+                os.path.basename(other_speaker_path).replace(".wav", ".ctm")
             )
-            other_spk_ctm_path = os.path.join(args.ctm_path, other_spk_ctm_name)
+            other_spk_ctm_path = os.path.join(ctm_path, other_spk_ctm_name)
             with open(other_spk_ctm_path, "rb") as f:
-                other_spk_ctm = f.readline()
+                other_spk_ctm = f.read().strip()
             data = [
                 self_spk_audio,
                 other_spk_aduio,
@@ -173,7 +168,7 @@ def run_simulation() -> None:
             with open(simulated_ctm_path, "w") as f:
                 f.write(transformed_data["meta"]["alignment"])
             # save simulated metadata
-            if args.save_meta:
+            if save_meta:
                 save_meta = json.dumps(transformed_data["meta"], cls=NumpyEncoder)
                 meta_name = (
                     os.path.basename(self_speaker_path)[:-4]
@@ -186,5 +181,14 @@ def run_simulation() -> None:
                     f.write(save_meta)
         print("Finished...")
 
+
 if __name__ == "__main__":
-    run_simulation()  # pragma: no cover
+    parser = build_args_parser()
+    args = parser.parse_args()
+    run_simulation(
+        args.input_data_tsv,
+        args.ctm_path,
+        args.output_root_path,
+        args.transforms_config_file,
+        args.save_meta,
+    )  # pragma: no cover

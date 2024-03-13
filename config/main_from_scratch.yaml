@@ -1,0 +1,21 @@
+defaults:
+    - .@paths: paths
+    - .@prepare_tedlium_data: prepare_tedlium_data
+    - .@prepare_librispeech_alignments: prepare_librispeech_alignments
+    - .@speed_perturb: speed_perturb
+    - .@prepare_data_for_simulation: prepare_data_for_simulation
+    - .@simulate: simulate
+    - .@prepare_simulated_data: prepare_simulated_data
+    - .@prepare_tokenizer: prepare_tokenizer
+    - .@train_asr: train_asr
+    - .@prepare_data: prepare_data
+    - .@finetune_multichannel_asr: finetune_multichannel_asr
+    - _self_
+
+# Setting up paths for outputs of the experiments
+exp_name: base_from_scratch
+base_dir: exp/${exp_name}
+hydra:
+    run:
+        dir:
+            ${base_dir}/hydra

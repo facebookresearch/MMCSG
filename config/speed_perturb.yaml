@@ -1,0 +1,26 @@
+audio_dirs: 
+    - ${...prepare_tedlium_data.output_tedlium_segments_dir}
+    - ${...paths.librispeech_data_path}/train-clean-100
+    - ${...paths.librispeech_data_path}/train-clean-360
+    - ${...paths.librispeech_data_path}/train-other-500
+output_audio_dirs: 
+    - data/tedlium/segments/wav_sp
+    - data/librispeech/wav_sp/train-clean-100
+    - data/librispeech/wav_sp/train-clean-360
+    - data/librispeech/wav_sp/train-other-500
+alignment_dirs:
+    - ${...prepare_tedlium_data.output_tedlium_alignments_dir}
+    - ${...prepare_librispeech_alignments.output_alignment_dirs[0]}
+    - ${...prepare_librispeech_alignments.output_alignment_dirs[1]}
+    - ${...prepare_librispeech_alignments.output_alignment_dirs[2]}
+output_alignment_dirs: 
+    - data/tedlium/segments/alignments_sp
+    - data/librispeech/alignments_sp/train-clean-100
+    - data/librispeech/alignments_sp/train-clean-360
+    - data/librispeech/alignments_sp/train-other-500
+factor_range: [0.9, 1.1]
+
+# these will be set from CLI when submitting the script to cluster
+i_split: ???
+n_splits: ???
+

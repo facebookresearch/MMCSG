@@ -1,0 +1,8 @@
+simulation_pairs_dir: ${..prepare_data_for_simulation.simulation_pairs_dir}
+prepared_alignment_dir: ${..prepare_data_for_simulation.prepared_alignments_dir}
+transforms_config_path: ${..prepare_data_for_simulation.transforms_path}
+simulated_data_dir: data/simulated # output directory of the simulation
+save_metadata: false
+
+# this will be set from CLI when submitting the script to cluster
+i_split: ???

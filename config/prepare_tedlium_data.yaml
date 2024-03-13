@@ -1,0 +1,5 @@
+tedlium_audio_dir: ${..paths.tedlium_data_path}/sph
+tedlium_stm_dir: ${..paths.tedlium_data_path}/stm
+permitted_subs_path: data/permitted_substitutions.yaml
+output_tedlium_segments_dir: data/tedlium/segments/wav
+output_tedlium_alignments_dir: data/tedlium/segments/alignments

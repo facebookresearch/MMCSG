@@ -1,0 +1,32 @@
+alignment_dirs:
+    - ${...prepare_tedlium_data.output_tedlium_alignments_dir}
+    - ${...prepare_librispeech_alignments.output_alignment_dirs[0]}
+    - ${...prepare_librispeech_alignments.output_alignment_dirs[1]}
+    - ${...prepare_librispeech_alignments.output_alignment_dirs[2]}
+    - ${...speed_perturb.output_alignment_dirs[0]}
+    - ${...speed_perturb.output_alignment_dirs[1]}
+    - ${...speed_perturb.output_alignment_dirs[2]}
+    - ${...speed_perturb.output_alignment_dirs[3]}
+
+audio_dirs:
+    - ${...prepare_tedlium_data.output_tedlium_segments_dir}
+    - ${...paths.librispeech_data_path}/train-clean-100
+    - ${...paths.librispeech_data_path}/train-clean-360
+    - ${...paths.librispeech_data_path}/train-other-500
+    - ${...speed_perturb.output_audio_dirs[0]}
+    - ${...speed_perturb.output_audio_dirs[1]}
+    - ${...speed_perturb.output_audio_dirs[2]}
+    - ${...speed_perturb.output_audio_dirs[3]}
+
+n_parts: 100
+transforms_template_path: config/simulation_transform.json
+noises_dir: ${..paths.dns_noise_data_path}
+rir_dir: ${..paths.mcas_real_rir_path}
+
+# below are paths to outputs of the script
+prepared_alignments_dir: data/prepared_alignments
+simulation_pairs_dir: data/simulation_pairs
+noises_16k_dir: data/noises
+noise_list: data/noise_list.tsv
+rir_list: data/rir_list.tsv
+transforms_path: data/simulation_transform.json

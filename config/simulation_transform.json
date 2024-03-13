@@ -1,0 +1,115 @@
+[
+    [
+    "SampleNoiseRemoteTransform",
+    {
+      "fs": 16000,
+      "noise_datasets": [
+        [
+          "{}",
+          0,
+          0,
+          1
+        ]
+      ],
+      "noise_sources_model": [
+        1
+      ]
+    }
+  ],
+  [
+    "OverlapMultiTalkerTransform",
+    {
+      "add_mixture_prob": 1,
+      "prob_segment_audio": 1,
+      "prob_add_distractor": 0,
+      "none_overlap_frac": 0.95,
+      "shifting_fraction_min": 0.7,
+      "shifting_fraction_max": 0.95,
+      "split_utt_threshold_min": 0.1,
+      "split_utt_threshold_max": 0.2,
+      "seed": 0
+    }
+  ],
+  [
+    "SampleApplyRIRTransform",
+    {
+      "fs": 16000,
+      "num_noise_sources": 1,
+      "rir_datasets": [
+        [
+          "{}",
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  [
+    "SNRAdjustmentMCTransform",
+    {
+      "snr": [
+        {
+          "snr": [
+              -5,
+              -4,
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              12,
+              14,
+              16,
+              20,
+              30,
+              40,
+              80
+          ],
+          "weight": [
+              10,
+              10,
+              15,
+              15,
+              20,
+              25,
+              25,
+              25,
+              25,
+              25,
+              25,
+              25,
+              25,
+              25,
+              25,
+              25,
+              20,
+              20,
+              20,
+              20,
+              20,
+              20,
+              15
+          ]
+        }
+      ],
+      "fs": 16000,
+      "add_noise": true,
+      "add_distractor_as_bcg_noise": false,
+      "use_alignment": true,
+      "distractor_snr": [
+        79,
+        80
+      ]
+    }
+  ]
+]

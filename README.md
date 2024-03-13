@@ -2,7 +2,7 @@
 ### ASR for multimodal conversations in smart glasses
 This repository contains the baseline system for CHiME-8 challenge, Task 3 MMCSG. For information on how to participate in the challenge and how to get the development and evaluation datasets, please refer to the [challenge website](https://www.chimechallenge.org/current/task3/index). 
 
-This README is a guide on how to install and run the baseline system for the challenge. Note that we are also releasing a tool for data simulation, which can be used to extend the training dataset. You can find the tool in `tools/MCAC_simulator`. Follow the `README.md` therein to use this tool.
+This README is a guide on how to install and run the baseline system for the challenge. This baseline system uses a pre-trained model and fine-tunes it on the in-domain MMCSG data. We are also releasing a second baseline which is trained from scratch on data simulated from Librispeech and TEDLIUM. For this second baseline system, please follow [README_from_scratch.md](README_from_scratch.md). Note that we are also releasing a tool for data simulation, which can be used to extend the training dataset. You can find the tool in `tools/MCAC_simulator`. Follow the [README.md](tools/MCAC_simulator/README.md) therein to use this tool.
 
 ## Sections
 1. <a href="#install">Installation</a>

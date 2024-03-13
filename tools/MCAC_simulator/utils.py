@@ -71,7 +71,7 @@ def get_ctm_list(
         ctm = ctm[1:-1]
     if ctm[0] == ctm[-1] == "'":
         ctm = ctm[1:-1]
-    lines = ctm.strip().split("\\n")
+    lines = ctm.strip().split("\n")
     res = []
     previous_word_end = 0
     for x in lines:
@@ -727,7 +727,7 @@ def generate_single_speaker_speech(
         ctm = [x for x in ctm if len(x.word) > 0 and x.word[0] != SPEAKER_CHANGE_TOKEN]
         sot = [x for x in sot if len(x) > 0 and x[0] != SPEAKER_CHANGE_TOKEN]
     # encode ctm and sot into bytes
-    ctm = "\\n".join([str(x) for x in ctm]).encode("utf-8")
+    ctm = "\n".join([str(x) for x in ctm]).encode("utf-8")
     sot = " ".join(sot).encode("utf-8")
 
     return mixed_audio, ctm, sot
@@ -905,7 +905,7 @@ def generate_mixture(
         ctm = [x for x in ctm if len(x.word) > 0 and x.word[0] != SPEAKER_CHANGE_TOKEN]
         sot = [x for x in sot if len(x) > 0 and x[0] != SPEAKER_CHANGE_TOKEN]
     # encode ctm and sot into bytes
-    ctm = "\\n".join([str(x) for x in ctm]).encode("utf-8")
+    ctm = "\n".join([str(x) for x in ctm]).encode("utf-8")
     sot = " ".join(sot).encode("utf-8")
 
     return mixed_audio, ctm, sot
