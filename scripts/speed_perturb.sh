@@ -6,6 +6,12 @@
 #SBATCH --error=<PATH-TO-THE-REPO>/logs/speed_perturb.err
 #SBATCH --output=<PATH-TO-THE-REPO>/logs/speed_perturb.out
 
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
 # INSTRUCTIONS TO USE THIS SCRIPT
 # - in the SBATCH parameters above, replace <NAME-OF-PARTITION> with the name of your SLURM partition
 # - in the SBATCH parameters above, replace <PATH-TO-THE-REPO> with the path to MMCSG repository
