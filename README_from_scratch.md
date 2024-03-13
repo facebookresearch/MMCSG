@@ -17,7 +17,9 @@ The installation of the necessary tools is detailed in `install_from_scratch.sh`
 When running the system, it is necessary to activate the created conda environment and set the environment variables:
 
     conda activate chime_recipe_2
-    export PYTHONPATH=$PWD/tools/multitalker_wer # necessary for evaluation step
+    export PYTHONPATH=$PWD/tools/multitalker_wer:$PYTHONPATH # necessary for evaluation step
+    export PYTHONPATH=$PWD/tools/NeMo/scripts/tokenizers:$PYTHONPATH # necessary for preparing tokenizer
+    export PYTHONPATH=$PWD/tools/MCAC_simulator:$PYTHONPATH # necessary for simulation step
     export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python # necessary for finetuning step
 
 ## <a id="running">2. Running the baseline system</a>
