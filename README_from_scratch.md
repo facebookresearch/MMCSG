@@ -61,22 +61,6 @@ By default, the output transcriptions including speaker labels and per-word time
 ## <a id="description">3. Detailed description of the system</a>
 Here, we describe the individual steps called from `run_from_scratch.sh`.
 
-### Template
-**Inputs:** 
-- 
-- 
-
-**Outputs:** 
-- 
-- 
-
-The script `scripts/???.py` prepares ???. This includes:
--
--
--
-
-This step can be configured by changing `config/???.yaml` or passing command-line arguments `???.<parameter>=<value>`.
-
 ### Preparation of TEDLIUM data
 **Inputs:** 
 - downloaded TEDLIUM dataset (`sph` and `stm` directories), with path specified in `config/paths.yaml` 
